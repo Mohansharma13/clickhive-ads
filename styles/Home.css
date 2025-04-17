@@ -234,7 +234,7 @@
 /* Mobile View (up to 768px) */
 @media (max-width: 768px) {
     .left-hero{
-        margin-top: 20%;
+        margin-top: 5px;
     }
     .hero-button{
         margin-top: 80%;

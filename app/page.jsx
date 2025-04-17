@@ -34,7 +34,7 @@ export default function Home() {
           playsInline
           key={isMobile ? "mobile" : "desktop"}
         >
-          <source src={isMobile ? "/assets/mobile-view-final.mp4" : "/assets/bg-final.mp4"} type="video/mp4" />
+          <source src={isMobile ? "/assets/mobile-laptop-bg.mp4" : "/assets/bg-final.mp4"} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
 
