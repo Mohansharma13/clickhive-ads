@@ -1,0 +1,136 @@
+/* OurserviceCardPage.css */
+.service-details-wrapper {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.service-details {
+  padding: 2.5rem;
+  margin: 1rem 0;
+  border-radius: 1rem;
+  background-color: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.service-details.not-found {
+  text-align: center;
+  padding: 3rem;
+  color: #e74c3c;
+}
+
+.service-details.not-found a {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #3498db;
+  text-decoration: none;
+}
+
+.service-title {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.service-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 0.75rem;
+  margin: 1.5rem 0;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.service-content {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+}
+
+.description {
+  margin: 1.5rem 0;
+}
+
+.about {
+  margin: 2rem 0;
+  font-style: italic;
+  color: #666;
+  border-left: 3px solid gold;
+  padding-left: 1.5rem;
+}
+
+.back-button-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+}
+
+.back-button {
+  background-color: gold;
+  color: #222;
+  border: none;
+  padding: 0.75rem 1.75rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.back-button:hover {
+  background-color: #ffd700;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+}
+
+.back-button:focus {
+  outline: 2px solid rgba(255, 215, 0, 0.5);
+}
+
+/* Loader Styling */
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-top: 4px solid gold;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .service-details {
+    padding: 1.5rem;
+  }
+  
+  .service-title {
+    font-size: 1.8rem;
+  }
+  
+  .service-content {
+    font-size: 1rem;
+  }
+  
+  .back-button {
+    padding: 0.6rem 1.5rem;
+  }
+}
