@@ -82,7 +82,7 @@ export default function Home() {
                 ClickHive is a full-scale Digital Marketing Agency based in New Delhi, India.
                 We blend years of experience and knowledge to create performance-driven and creative solutions.
               </p>
-              <Link href="/aboutus" className="link">
+              <Link href="/ourservices" className="link">
                 ABOUT US
               </Link>
             </div>
