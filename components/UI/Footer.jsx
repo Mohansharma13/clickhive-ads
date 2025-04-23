@@ -25,7 +25,7 @@ function Footer() {
           <ul>
             <li><Link href="/">Home</Link></li>
             <li><Link href="/ourservices">Services</Link></li>
-            <li><Link href="/ourwork">Our Work</Link></li>
+            {/* <li><Link href="/ourwork">Our Work</Link></li> */}
             <li><Link href="/aboutus">About Us</Link></li>
             <li><Link href="/contact">Contact</Link></li>
           </ul>
@@ -43,13 +43,13 @@ function Footer() {
         <div className="footer-socials">
           <h4>Follow Us</h4>
           <div className="footer-icon-div">
-            <a href="https://www.facebook.com/yourpage" target="_blank" rel="noopener noreferrer">
+            <a href="#" target="_blank" rel="noopener noreferrer">
               <IoLogoFacebook className="icons" />
             </a>
-            <a href="https://www.instagram.com/yourpage" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/clickhiveads?igsh=MWV1b2Y4endpb2E1NA==" target="_blank" rel="noopener noreferrer">
               <IoLogoInstagram className="icons" />
             </a>
-            <a href="https://www.linkedin.com/company/yourpage" target="_blank" rel="noopener noreferrer">
+            <a href="#" target="_blank" rel="noopener noreferrer">
               <FaLinkedin className="icons" />
             </a>
           </div>

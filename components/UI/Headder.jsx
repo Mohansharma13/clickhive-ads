@@ -68,6 +68,9 @@ function Header() {
             <Link href="/ourservices" className="nav-link" onClick={() => setMenuOpen(false)}>Our Services</Link>
           </li>
           <li>
+            <Link href="/aboutus" className="nav-link" onClick={() => setMenuOpen(false)}>About us</Link>
+          </li>
+          <li>
             <Link href="/contact" className="nav-link" onClick={() => setMenuOpen(false)}>Contact</Link>
           </li>
         </ul>
