@@ -115,7 +115,7 @@ function AboutUs() {
                     <div className="team-member">
                         <img src="aboutus/akshat.jpeg" alt="Akshat - Marketing Strategist" />
                         <h3>Akshat</h3>
-                        <p>Marketing Head</p>
+                        <p>Marketing Head & Co-Founder</p>
                         <p>CEO</p>
                         <div className="social-links">
                             <a href="https://www.linkedin.com/in/akshat-sinha-540202225/"><span>LinkedIn</span></a>
