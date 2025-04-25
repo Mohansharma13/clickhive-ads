@@ -101,12 +101,13 @@ function AboutUs() {
 
             {/* Meet the Team Section */}
             <section className="aboutus-team">
-                <h2>Meet Our Founders</h2>
+                <h2>Meet Our Leaders</h2>
                 <div className="team-grid">
                     <div className="team-member">
                         <img src="aboutus/mohan.jpg" alt="Mohan - Creative Director" />
                         <h3>Mohan</h3>
                         <p>Creative Director</p>
+                        <p>Founder, CTO</p>
                         <div className="social-links">
                             <a href="https://www.linkedin.com/in/mohan-sharma-71a301218/"><span>LinkedIn</span></a>
                             <a href="https://www.instagram.com/_mohan_sharma__?utm_source=qr&igsh=NHAxZXphZ3RsbWY1"><span>Instagram</span></a>
@@ -116,6 +117,7 @@ function AboutUs() {
                         <img src="aboutus/akshat.jpeg" alt="Akshat - Marketing Strategist" />
                         <h3>Akshat</h3>
                         <p>Marketing Strategist</p>
+                        <p>CEO</p>
                         <div className="social-links">
                             <a href="https://www.linkedin.com/in/akshat-sinha-540202225/"><span>LinkedIn</span></a>
                             <a href="https://www.instagram.com/akshatsinha1077?igsh=MTh0dHEwbHB4a2p1ZQ"><span>Instagram</span></a>
