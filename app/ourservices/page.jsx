@@ -1,5 +1,5 @@
 'use client';
-
+import { FaShoppingCart } from "react-icons/fa";
 import "@styles/OurServices.css";
 import Link from "next/link";
 import { services } from "@components/Api/OurserviceApi";
@@ -11,7 +11,16 @@ function OurServices() {
         <h1>Our Services</h1>
         <p>At ClickHive, we turn creativity into results — here's how we help your brand grow.</p>
       </header>
-
+      <section className="ecom-card">
+          <div className="service-card">
+            <div className="icon"><FaShoppingCart /></div>
+            <h2>E-commerce Marketing</h2>
+            <p>Drive product sales and maximize ROI with smart e-commerce strategies.</p>
+            <Link href='/ecom' className="cardButton">
+              Read More..
+            </Link>
+          </div>
+      </section>
       <section className="services-grid">
         {services.map((service, index) => (
           <div className="service-card" key={index}>

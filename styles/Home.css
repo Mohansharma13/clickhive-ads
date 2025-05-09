@@ -3,6 +3,14 @@
     margin: 0px;
     box-sizing: border-box;
 }
+
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
 .main-hero {
     position: relative;
     width: 100%;
@@ -254,154 +262,102 @@
     }
 
   }
-
-  /* posters */
-.posters{
-    display: flex;
-    flex-direction: row;
-    background-color: #d3d3d377;
+/* Posters Section - Fixed Version */
+.posters {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #d3d3d3;
 }
-.seo-optimization{
-    width: 40%;
-    height: 100vh;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url(/assets/image-machine.png);
-    background-size: cover;
 
+.seo-optimization {
+  flex: 0 0 40%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(/assets/image-machine.png) center/cover no-repeat;
+  position: relative;
 }
-.four-posters{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    width: 60%;
+
+.four-posters {
+  flex: 0 0 60%;
+  display: flex;
+  flex-direction: column;
 }
 
 .upper2,
-.lower2{
-    display: flex;
-    flex-direction: row;
-    height: 50%;
+.lower2 {
+  display: flex;
+  flex: 1;
 }
+
 .upper2left,
 .upper2right,
 .lower2left,
 .lower2right {
-  width: 50%;
+  flex: 0 0 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   background-size: cover;
   background-position: center;
-  padding: 1rem; /* Optional: adds spacing around h1 */
-  text-align: center; /* Center text for wrapping */
+  position: relative;
+  padding: 1rem;
 }
 
-.upper2left h1,
-.upper2right h1,
-.lower2left h1,
-.lower2right h1 {
-  color: #ffffff;
-  font-size: 1.5rem; /* Adjust as needed */
-  line-height: 1.4;
-  max-width: 90%; /* Prevents overflow */
-}
-.upper2left{
-    background-image: url("/assets//maketing.jpg");
-    background-size: cover;
-}
-.upper2right{
-    background-image: url("/assets/market-anaylisis.jpg");
-    background-size: cover;
-}
-.lower2left{
-    background-image: url("/assets/usnigcomputer.jpg");
-    background-size: cover;
-}
-.lower2right{
-    background-image: url("/assets/using social-media.jpg");
-    background-size: cover;
-}
-
-/* Initial state: hide h1 with fade-down effect hover effect */
+/* Text styles */
 .upper2left h1,
 .upper2right h1,
 .lower2left h1,
 .lower2right h1,
 .seo-optimization h1 {
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.4s ease, transform 0.4s ease;
+  color: white;
+  text-align: center;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  max-width: 90%;
+  position: relative;
+  z-index: 2;
 }
 
-/* Hover state: show h1 */
-.upper2left:hover h1,
-.upper2right:hover h1,
-.lower2left:hover h1,
-.lower2right:hover h1, 
-.seo-optimization:hover h1{
-  opacity: 1;
-  transform: translateY(0);
+/* Background images */
+.upper2left { background-image: url("/assets/maketing.jpg"); }
+.upper2right { background-image: url("/assets/market-anaylisis.jpg"); }
+.lower2left { background-image: url("/assets/usnigcomputer.jpg"); }
+.lower2right { background-image: url("/assets/using social-media.jpg"); }
+
+/* Background overlay */
+.upper2left::before,
+.upper2right::before,
+.lower2left::before,
+.lower2right::before,
+.seo-optimization::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
 }
 
-/* Optional: add a subtle background + border on hover */
-.upper2left:hover,
-.upper2right:hover,
-.lower2left:hover,
-.lower2right:hover,
-.seo-optimization:hover {
-  background-blend-mode: overlay;
-  background-color: rgba(0, 0, 0, 0.2);
-  border: 10px solid rgba(255, 255, 255, 0.4);
-  cursor: pointer;
-  transition: background-color 0.4s ease, border 0.4s ease;
-}
-
-
-@media  (max-width: 768px) {
-    .posters{
-        flex-direction: column;
-        /* display: none; */
-    }
-    .seo-optimization{
-        width: 100%;
-    }
-    .four-posters{
-        width: 100%;
-    }
-    /* disable hover */
-    .upper2left h1,
-    .upper2right h1,
-    .lower2left h1,
-    .lower2right h1,
-    .seo-optimization h1{
-      opacity: 1;
-      transform: translateY(0);
-      transition: none;
-    }
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .posters {
+    flex-direction: column;
+    min-height: 200vh;
+  }
   
-    .upper2left:hover h1,
-    .upper2right:hover h1,
-    .lower2left:hover h1,
-    .lower2right:hover h1 ,
-    .seo-optimization:hover h1{
-      opacity: 1;
-      transform: translateY(0);
-    }
-  
-    .upper2left:hover,
-    .upper2right:hover,
-    .lower2left:hover,
-    .lower2right:hover,
-    .seo-optimization:hover {
-      background-color: transparent;
-      border: none;
-      cursor: default;
-      transition: none;
-    }    
+  .seo-optimization,
+  .four-posters {
+    flex: 0 0 100%;
+    min-height: 100vh;
+  }
 }
+
+
 /* solution */
 .solution {
     width: 100%;
@@ -579,3 +535,38 @@
       font-size: 1rem;
     }
   }
+
+  .floating-contact {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.whatsapp-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #25D366;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  transition: transform 0.2s ease-in-out;
+}
+
+.whatsapp-button:hover {
+  transform: scale(1.05);
+}
+
+@media screen and (max-width: 600px) {
+  .floating-contact{
+    left: 20px;
+    right: auto;
+  }
+  .floating-contact span{
+    display: none;
+  }
+}

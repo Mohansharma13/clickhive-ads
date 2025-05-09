@@ -1,145 +1,147 @@
 'use client';
 
+import { useEffect } from "react";
 import React from "react";
 import "@styles/aboutus.css"
 import Link from "next/link";
+import QuoteCarousel from "@components/UI/quotes"
+
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function AboutUs() {
+      useEffect(() => {
+        AOS.init({
+        duration: 1000,
+        once: true,
+        easing: "ease-in-out",
+        });
+      }, []);
+
     return (
         <div className="aboutus">
             {/* Hero Section */}
-            <div className="aboutus-hero">
+            <div className="aboutus-hero" data-aos="fade-in">
                 <div className="hero-content">
-                    <section className="hero-text">
+                <section className="hero-text" data-aos="fade-right">
                     <h1 className="hero-title">Get to Know Us</h1>
-                    <div className="hero-quote">
-                        "Bold ideas. Smart strategies. Real results."
-                    </div>
+                    <div className="hero-quote">"Bold ideas. Smart strategies. Real results."</div>
                     <p className="hero-description">
-                        We’re a New Delhi-based digital marketing collective, driven by innovation and strategy. With a finger on the pulse of the latest trends, we create standout online experiences that help businesses cut through the noise.
+                    We’re a New Delhi-based digital marketing collective, driven by innovation and strategy...
                     </p>
                     <Link href="/ourservices">
-                        <button className="hero-cta-button">Explore Our Services</button>
+                    <button className="hero-cta-button">Explore Our Services</button>
                     </Link>
-                    </section>
-                    <section className="hero-image">
+                </section>
+                <section className="hero-image" data-aos="fade-left">
                     <img src="aboutus/heroimage.jpg" alt="Our Creative Team" />
-                    </section>
+                </section>
                 </div>
             </div>
 
             {/* Why Choose Us */}
-            <section className="aboutus-values">
+            <section className="aboutus-values" data-aos="fade-up">
                 <h2>Why Choose Us</h2>
                 <div className="values-grid">
-                    <div className="value-card">
-                        <div className="value-icon">💡</div>
-                        <h3>Inventive Thinking</h3>
-                        <p>We deliver fresh, out-of-the-box ideas designed for the ever-changing digital world.</p>
-                    </div>
-                    <div className="value-card">
-                        <div className="value-icon">🤝</div>
-                        <h3>Dedicated Service</h3>
-                        <p>As a boutique agency, we give every client focused attention and care.</p>
-                    </div>
-                    <div className="value-card">
-                        <div className="value-icon">💰</div>
-                        <h3>Smart Budgeting</h3>
-                        <p>We bring top-tier results without the overhead costs of big firms.</p>
-                    </div>
-                    <div className="value-card">
-                        <div className="value-icon">⚡</div>
-                        <h3>Fast Execution</h3>
-                        <p>Our lean structure means we move quickly—from idea to impact.</p>
-                    </div>
+                <div className="value-card" data-aos="zoom-in">
+                    <div className="value-icon">💡</div>
+                    <h3>Inventive Thinking</h3>
+                    <p>We deliver fresh, out-of-the-box ideas...</p>
+                </div>
+                <div className="value-card" data-aos="zoom-in" data-aos-delay="100">
+                    <div className="value-icon">🤝</div>
+                    <h3>Dedicated Service</h3>
+                    <p>As a boutique agency, we give every client focused attention...</p>
+                </div>
+                <div className="value-card" data-aos="zoom-in" data-aos-delay="200">
+                    <div className="value-icon">💰</div>
+                    <h3>Smart Budgeting</h3>
+                    <p>We bring top-tier results without the overhead...</p>
+                </div>
+                <div className="value-card" data-aos="zoom-in" data-aos-delay="300">
+                    <div className="value-icon">⚡</div>
+                    <h3>Fast Execution</h3>
+                    <p>Our lean structure means we move quickly...</p>
+                </div>
                 </div>
             </section>
 
             {/* Our Mission Section */}
-            <section className="aboutus-mission">
+            <section className="aboutus-mission" data-aos="fade-right">
                 <h2>Our Mission</h2>
-                <p>
-                    We’re here to help small and mid-sized brands break barriers online. Our mission is to equip you with sharp strategies, effective tools, and a passionate team that fuels your digital growth. Your wins are our victories.
-                </p>
+                <p>We’re here to help small and mid-sized brands break barriers online...</p>
             </section>
 
             {/* Our Approach */}
-            <section className="aboutus-approach">
+            <section className="aboutus-approach" data-aos="fade-left">
                 <h2>Our Method</h2>
                 <div className="approach-steps">
-                    <div className="approach-step">
-                        <span className="step-number">1</span>
-                        <div>
-                            <h3>Understand</h3>
-                            <p>We begin by deeply understanding your goals, audience, and challenges.</p>
-                        </div>
+                <div className="approach-step" data-aos="fade-up">
+                    <span className="step-number">1</span>
+                    <div>
+                    <h3>Understand</h3>
+                    <p>We begin by deeply understanding your goals...</p>
                     </div>
-                    <div className="approach-step">
-                        <span className="step-number">2</span>
-                        <div>
-                            <h3>Strategize</h3>
-                            <p>We craft a tailored roadmap that aligns with your vision and resources.</p>
-                        </div>
+                </div>
+                <div className="approach-step" data-aos="fade-up" data-aos-delay="100">
+                    <span className="step-number">2</span>
+                    <div>
+                    <h3>Strategize</h3>
+                    <p>We craft a tailored roadmap that aligns with your vision...</p>
                     </div>
-                    <div className="approach-step">
-                        <span className="step-number">3</span>
-                        <div>
-                            <h3>Execute</h3>
-                            <p>From visuals to campaigns, we execute every detail with precision.</p>
-                        </div>
+                </div>
+                <div className="approach-step" data-aos="fade-up" data-aos-delay="200">
+                    <span className="step-number">3</span>
+                    <div>
+                    <h3>Execute</h3>
+                    <p>From visuals to campaigns, we execute...</p>
                     </div>
-                    <div className="approach-step">
-                        <span className="step-number">4</span>
-                        <div>
-                            <h3>Optimize</h3>
-                            <p>We refine and improve based on real-time data and feedback.</p>
-                        </div>
+                </div>
+                <div className="approach-step" data-aos="fade-up" data-aos-delay="300">
+                    <span className="step-number">4</span>
+                    <div>
+                    <h3>Optimize</h3>
+                    <p>We refine and improve based on real-time data...</p>
                     </div>
+                </div>
                 </div>
             </section>
 
-            {/* Meet the Team Section */}
-            <section className="aboutus-team">
+            {/* Meet the Team */}
+            <section className="aboutus-team" data-aos="fade-in">
                 <h2>Meet the Founders</h2>
                 <div className="team-grid">
-                    <div className="team-member">
-                        <img src="aboutus/mohan.jpg" alt="Mohan - Creative Director" />
-                        <h3>Mohan</h3>
-                        <p>Creative Director & Co-Founder</p>
-                        <p>CTO</p>
-                        <div className="social-links">
-                            <a href="https://www.linkedin.com/in/mohan-sharma-71a301218/"><span>LinkedIn</span></a>
-                            <a href="https://www.instagram.com/_mohan_sharma__?utm_source=qr&igsh=NHAxZXphZ3RsbWY1"><span>Instagram</span></a>
-                        </div>
-                    </div>
-                    <div className="team-member">
-                        <img src="aboutus/akshat.jpeg" alt="Akshat - Marketing Strategist" />
-                        <h3>Akshat</h3>
-                        <p>Marketing Head & Co-Founder</p>
-                        <p>CEO</p>
-                        <div className="social-links">
-                            <a href="https://www.linkedin.com/in/akshat-sinha-540202225/"><span>LinkedIn</span></a>
-                            <a href="https://www.instagram.com/akshatsinha1077?igsh=MTh0dHEwbHB4a2p1ZQ"><span>Instagram</span></a>
-                        </div>
-                    </div>
-                    <div className="team-member">
-                        <img src="aboutus/prerna.jpg" alt="Prerna - Social Media Manager" />
-                        <h3>Prerna</h3>
-                        <p>Head of Social Media</p>
-                        <div className="social-links">
-                            <a href="https://www.instagram.com/_mainspring_?igsh=dTJ4Ymx5OHppZjVn"><span>Instagram</span></a>
-                        </div>
+                <div className="team-member" data-aos="zoom-in">
+                    <img src="aboutus/mohan.jpg" alt="Mohan - Creative Director" />
+                    <h3>Mohan</h3>
+                    <p>Creative Director & Co-Founder</p>
+                    <div className="social-links">
+                    <a href="#"><span>LinkedIn</span></a>
                     </div>
                 </div>
+                <div className="team-member" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="aboutus/akshat.jpeg" alt="Akshat - Marketing Strategist" />
+                    <h3>Akshat</h3>
+                    <p>Marketing Head & Co-Founder</p>
+                </div>
+                <div className="team-member" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="aboutus/prerna.jpg" alt="Prerna - Social Media Manager" />
+                    <h3>Prerna</h3>
+                    <p>Head of Social Media</p>
+                </div>
+                </div>
             </section>
-
+            <div data-aos="fade-up" data-aos-delay="200" >
+            <QuoteCarousel/>
+            </div>
             {/* CTA Section */}
-            <section className="aboutus-cta">
+            <section className="aboutus-cta" data-aos="fade-up">
                 <h2>Let’s Take Your Brand Further</h2>
-                <p>We’re passionate, driven, and ready to elevate your online presence. Partner with us and experience the difference a focused team can make.</p>
+                <p>We’re passionate, driven, and ready to elevate your online presence...</p>
                 <Link href='/contact'><button className="cta-button">Start the Journey</button></Link>
             </section>
         </div>
+
     );
 }
 
