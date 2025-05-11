@@ -99,7 +99,7 @@ html, body {
   
 
 /* what we do section */
-.aboutus {
+.aboutus-home {
     background-color: #f4f4f4;
     padding: 5rem 2rem;
     font-family: 'Segoe UI', sans-serif;
@@ -176,6 +176,10 @@ html, body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
     transition: transform 0.3s ease;
   }
+    .what-center,
+    .what-right {
+      padding: 1.5rem; /* Reduce from 2rem */
+    }
   
   .what-center:hover,
   .what-right:hover {
@@ -536,37 +540,3 @@ html, body {
     }
   }
 
-  .floating-contact {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-}
-
-.whatsapp-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background-color: #25D366;
-  color: white;
-  padding: 10px 16px;
-  border-radius: 30px;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  text-decoration: none;
-  transition: transform 0.2s ease-in-out;
-}
-
-.whatsapp-button:hover {
-  transform: scale(1.05);
-}
-
-@media screen and (max-width: 600px) {
-  .floating-contact{
-    left: 20px;
-    right: auto;
-  }
-  .floating-contact span{
-    display: none;
-  }
-}

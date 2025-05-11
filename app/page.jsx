@@ -26,7 +26,7 @@ export default function Home() {
     window.addEventListener("resize", handleResize);
 
     AOS.init({
-    duration: 1000,
+    duration: 500,
     once: true,
     easing: "ease-in-out",
     });
@@ -72,9 +72,9 @@ export default function Home() {
       </div>
 
       {/* About Section */}
-      <div className="aboutus">
+      <div className="aboutus-home">
         <div className="what-we-do">
-          <div className="what-left" data-aos="fade-up">
+          <div className="what-left" >
             <h1 className="what-heading">
               What <span className="highlighted-text">we</span>
               <span className="do">
@@ -222,19 +222,6 @@ export default function Home() {
           We’re proud to be new and driven — let’s grow together.
         </p>
       </section>
-
-
-      <div className="floating-contact">
-        <a
-          href="https://wa.me/9555705879" // Replace with your actual WhatsApp number
-          target="_blank"
-          rel="noopener noreferrer"
-          className="whatsapp-button"
-        >
-          <FaWhatsapp size={24} />
-          <span>+91 9555705879</span>
-        </a>
-      </div>
 
     </div>
   );
