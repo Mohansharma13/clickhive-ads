@@ -1,8 +1,8 @@
 // app/layout.jsx
 import './globals.css'
-import Footer from '../components/UI/Footer'
-import Headder from '../components/UI/Headder'
-import Whatsapp from '@components/UI/Whatsapp'  // ✅ Use PascalCase
+import Footer from '../components/UI/Footer';
+import Headder from '../components/UI/Headder';
+import Whatsapp from '../components/UI/whatsapp.jsx';
 
 export default function RootLayout({ children }) {
   return (
