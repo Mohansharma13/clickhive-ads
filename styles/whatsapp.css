@@ -14,31 +14,51 @@
   gap: 8px;
   background-color: #25D366;
   color: white;
-  padding: 10px 16px ;
+  padding: 10px 16px;
   border-radius: 30px;
   font-weight: bold;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   text-decoration: none;
   transition: transform 0.2s ease-in-out;
+  animation: glow 2s ease-in-out 8s infinite;
 }
 
-.whatsapp-button:hover {
-  transform: scale(1.05);
+.phone-button {
+  display: none;
 }
 
-
-.floating-contact .whatsapp-button svg {
-  width: 24px;
-  height: 24px;
-  flex-shrink: 0;
-}
-
+/* Phone button styles for mobile */
 @media screen and (max-width: 600px) {
-  .floating-contact{
+  .floating-contact {
     left: 20px;
     right: auto;
   }
-  .floating-contact span{
+
+  .floating-contact span {
     display: none;
+  }
+
+  .phone-button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background-color: #25D366;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 30px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    transition: transform 0.2s ease-in-out;
+    margin-top: 10px;
+    animation: glow 2s ease-in-out 8s infinite;
+  }
+}
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(37, 211, 102, 0.6), 0 0 20px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(37, 211, 102, 1), 0 0 30px rgba(37, 211, 102, 0.8);
   }
 }
