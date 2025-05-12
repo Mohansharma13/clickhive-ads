@@ -22,7 +22,6 @@ function Whatsapp() {
         className="phone-button"
       >
         <FaPhoneAlt className="phone-icon" size={24} />
-
       </a>
     </div>
   )

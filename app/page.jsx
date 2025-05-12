@@ -1,15 +1,14 @@
 'use client';
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Link from "next/link";
-import QuoteCarousel from "@components/UI/quotes"
-import "../styles/Home.css"
+import "../styles/Home.css";
 
-// fade animation
 import AOS from "aos";
 import "aos/dist/aos.css";
 
-import { FaWhatsapp } from "react-icons/fa";
+// import desktopPoster from '../public/assets/pc-bg-image.jpg';
+// import mobilePoster from '../public/assets/mobile-bg-image.jpg';
 
 const clintslogo = [
   "/assets/clintslogo/Caramelly Logo.jpg",
@@ -19,38 +18,73 @@ const clintslogo = [
 
 export default function Home() {
   const [isMobile, setIsMobile] = useState(false);
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [videoError, setVideoError] = useState(false);
+
+  const handleResize = useCallback(() => {
+    setIsMobile(window.innerWidth <= 800);
+  }, []);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 800);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-
+    // Initialize AOS only once
     AOS.init({
-    duration: 500,
-    once: true,
-    easing: "ease-in-out",
+      duration: 500,
+      once: true,
+      easing: "ease-in-out",
     });
 
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    // Proper debounce implementation
+    const debounce = (fn, delay) => {
+      let timer;
+      return function() {
+        clearTimeout(timer);
+        timer = setTimeout(() => fn.apply(this, arguments), delay);
+      };
+    };
+
+    const debouncedResize = debounce(handleResize, 100);
+    
+    // Initial check
+    handleResize();
+    
+    // Add event listener
+    window.addEventListener("resize", debouncedResize);
+
+    return () => {
+      window.removeEventListener("resize", debouncedResize);
+    };
+  }, [handleResize]);
 
   return (
     <div className="home">
-
       {/* Hero Section with Video Background */}
       <div className="main-hero">
-        <video
-          className="video-bg"
-          autoPlay
-          muted
-          loop
-          playsInline
-          key={isMobile ? "mobile" : "desktop"}
-        >
-          <source src={isMobile ? "/assets/mobile-laptop-bg.mp4" : "/assets/bg-final.mp4"} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        {!videoError ? (
+          <video
+            className="video-bg"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            key={isMobile ? "mobile" : "desktop"}
+            onLoadedData={() => setIsVideoLoaded(true)}
+            onError={() => setVideoError(true)}
+            poster={isMobile ? '/assets/mobile-bg-image.jpg' : '/assets/pc-bg-image.jpg'}
+          >
+            <source src={isMobile ? "/assets/mobile-laptop-bg.mp4" : "/assets/bg-final.mp4"} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        ) : null}
 
+        {/* Fallback if video fails to load or is still loading */}
+        {(videoError || !isVideoLoaded) && (
+          <div className="video-fallback" style={{
+            // load fallback css if video is uable to load
+          }} />
+        )}
+
+        
         {/* Hero Text and Call to Action */}
         <div className="left-hero">
           <div className="hero-upper">
